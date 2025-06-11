@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elzoomo test</title>
+
+    <style>
+        .elzoomo {
+            outline: 1px solid #ccc;
+
+            img{
+                width:100%;
+            }
+        }
+
+        .grd{
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap:0.5em;
+        }
+    </style>
+
+
+
+    <script src="../elzoomo.js"></script>
+
+</head>
+
+<body>
+
+    <div class="grd">
+        <div class="col">
+            <h3>Manual initialization</h3>
+            <img id="elzoomoImg" src="https://picsum.photos/id/871/200/300" alt="dummy">
+
+        </div>
+
+
+        <div class="col">
+            <h3>Auto initialization by data-attributes</h3>
+            <div class="elzoomo">
+                <svg viewBox="0 0 100 100"
+                    data-zoom='{"minScale":0.1,"maxScale":10,"zoom":1,"zoomStep":1.001, "toolbar":true}'>
+                    <rect width="100%" height="100%" fill="#ccc" />
+                    <rect x="25%" y="25%" width="50%" height="50%" fill="#00" />
+                </svg>
+            </div>
+        </div>
+
+
+        <div class="col">
+            <h3>No zoom buttons</h3>
+            <div class="elzoomo">
+                <img src="https://picsum.photos/id/870/200/300?grayscale" data-zoom='{"toolbar":false}' alt="dummy">
+            </div>
+        </div>
+
+
+        <div class="col">
+            <h3>Zoom out</h3>
+            <div class="elzoomo">
+                <img src="https://picsum.photos/id/870/200/300?grayscale"
+                    data-zoom='{"minScale":0.1,"maxScale":100,"zoom":20,"zoomStep":1.001}' alt="dummy">
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        let elzoomoEl = document.getElementById('elzoomoImg');
+        let options = { "minScale": 0.1, "maxScale": 10, "zoom": 1, "zoomStep": 1.001, "toolbar": true }
+        initZoomEl(elzoomoEl, options)
+
+    </script>
+
+</body>
+
+</html>

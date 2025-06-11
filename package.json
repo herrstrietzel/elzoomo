@@ -1,0 +1,25 @@
+{
+  "name": "elzoomo",
+  "version": "0.1.0",
+  "main": "./dist/elzoomo.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herrstrietzel/elzoomo.git"
+  },
+  "keywords": [
+    "zoom",
+    "pan"
+  ],
+  "author": "herrstrietzel",
+  "license": "MIT",
+  "description": "Simple element zoom and pan helper",
+  "dependencies": {
+    "heap": "^0.2.7",
+    "elzoomo": "^0.1.6",
+    "terser": "^5.39.0"
+  },
+  "bugs": {
+    "url": "https://github.com/herrstrietzel/elzoomo/issues"
+  },
+  "homepage": "https://github.com/herrstrietzel/elzoomo#readme"
+}
